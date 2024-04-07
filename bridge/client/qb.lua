@@ -11,13 +11,8 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
 end)
 
 function handleVehicleKeys(veh)
-    if Config.UseSkKeys then
         local plate = GetVehicleNumberPlateText(veh)
         exports['sk-keys']:tempkey(plate)
-    else
-        local plate = GetVehicleNumberPlateText(veh)
-        TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', plate)
-    end
 end
 
 function hasPlyLoaded()
